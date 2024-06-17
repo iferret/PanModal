@@ -20,6 +20,9 @@ import UIKit
  ```
  */
 public protocol PanModalPresentable: AnyObject {
+    
+    /// shouldBeginAppearanceTransition
+    var shouldBeginAppearanceTransition: Bool { get }
 
     /**
      The scroll view embedded in the view controller.
@@ -235,3 +238,9 @@ public protocol PanModalPresentable: AnyObject {
     func panModalDidDismiss()
 }
 #endif
+
+extension PanModalPresentable {
+    
+    /// shouldBeginAppearanceTransition
+    public var shouldBeginAppearanceTransition: Bool { true }
+}
